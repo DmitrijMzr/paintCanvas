@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="dark.css">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="control">
+    <div class="dropdown">
+        <ul>
+            <li>
+                <span>&#9881;</span>
+                Language
+                <ul class="language">
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Русский</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>&#9881;</span>
+                Theme
+                <ul class="theme">
+                    <li><a href="#" id="dark">Dark</a></li>
+                    <li><a href="#" id="light">Light</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="panel">
+        <div class="brushes__panel">
+            <button class="brushes__button">Brushes</button>
+        </div>
+        <div class="size__panel">
+            <label for="brushSize">choose brush size</label>
+            <input id="brushSize" type="range" min="0" max="100" step="1" value="50">
+        </div>
+        <div class="blur__panel">
+            <label for="blurBrush">choose brush blur</label>
+            <input id="blurBrush" type="range" min="0" max="100" step="1" value="50">
+        </div>
+        <div class="color__panel">
+            <div class="red"></div>
+            <div class="orange"></div>
+            <div class="yellow"></div>
+            <div class="green"></div>
+            <div class="blue"></div>
+            <div class="black"></div>
+            <div class="purple"></div>
+            <div class="pink"></div>
+            <div class="grey"></div>
+            <div class="brown"></div>
+            <div class="silver"></div>
+            <div class="golden"></div>
+        </div>
+    </div>
+</div>
+<div class="view">
+<div class="figures">
+    <div class="square__figures"></div>
+    <div class="hexagon__figures"></div>
+    <div class="circle__figures">
+        <div class="circle__figures_two"></div>
+    </div>
+</div>
+<div class="canvas">
+    <canvas class="canvas__layers" id="a"></canvas>
+</div>
+<div class="layers">
+    <button class="button__layers">Add layers</button>
+</div>
+</div>
+
+<script src="main.js"></script>
+<script>
+    function includeCss(file){
+
+        let link = document.createElement("link");
+        link.setAttribute("rel", "stylesheet");
+        link.setAttribute("type", "text/css");
+        link.setAttribute("href", file);
+        document.getElementsByTagName("head")[0].appendChild(link);
+
+    }
+
+    const includeLight = document.getElementById('light');
+    const includeDark = document.getElementById('dark');
+    includeLight.addEventListener('click', function () {
+        includeCss('style.css')
+    })
+    includeDark.addEventListener('click', function () {
+        includeCss('dark.css')
+    })
+
+
+</script>
+</body>
+</html>

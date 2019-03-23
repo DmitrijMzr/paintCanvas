@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: Arial;
+    outline: none;
+}
+body{
+    background:black;
+}
+.control{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: 10px;
+    background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
+    box-shadow:
+            inset rgba(0,0,0,.6) 0 -3px 8px,
+            inset rgba(252,255,255,.7) 0 3px 8px,
+            rgba(0,0,0,.8) 0 3px 8px -3px;
+}
+.dropdown{
+    margin-top: 10px;
+}
+.dropdown > ul{
+    background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
+    color: #ccc;
+}
+
+.dropdown > ul > li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 5px 25px;
+    position: relative;
+}
+
+.dropdown > ul > li:hover{
+    background: linear-gradient(rgb(70,70,70), rgb(120,120,120));
+}
+
+ul.language{
+    position: absolute;
+    background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
+    list-style-type: none;
+    width: 161px;
+    padding-left: 0px;
+    margin-left: -25px;
+    padding-top: 5px;
+    opacity: 0;
+}
+ul.language li{
+    padding-top: 5px;
+    padding-left: 25px;
+    padding-bottom: 5px;
+}
+.dropdown li:hover .language{
+    opacity: 1;
+}
+ul.language li:hover{
+    color: white;
+    background-color: #656565;
+}
+
+
+ul.theme{
+    position: absolute;
+    background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
+    list-style-type: none;
+    width: 112px;
+    padding-left: 0px;
+    margin-left: -25px;
+    padding-top: 5px;
+    opacity: 0;
+}
+ul.theme li{
+    padding-top: 5px;
+    padding-left: 25px;
+    padding-bottom: 5px;
+}
+.dropdown li:hover .theme{
+    opacity: 1;
+}
+ul.theme li:hover{
+    color: white;
+    background-color: #656565;
+}
+a{
+    text-decoration: none;
+    color: #d8d8d8;
+}
+a:active,a:focus{
+    color: black;
+}
+.panel{
+    display: flex;
+    flex-wrap: wrap;
+}
+.brushes__panel{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.size__panel{
+    margin-top: 15px;
+}
+label{
+    color: white;
+}
+.blur__panel{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.color__panel{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.color__panel > div{
+    width: 14px;
+    height: 14px;
+    border: 1px solid white;
+}
+.red{
+    background: red;
+}
+.orange{
+    background-color: orange;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: blue;
+}
+.black{
+    background-color: black;
+}
+.purple{
+    background-color: purple;
+}
+.pink{
+    background-color: pink;
+}
+.grey{
+    background-color: grey;
+}
+.brown{
+    background-color: brown;
+}
+.silver{
+    background-color: silver;
+}
+.golden{
+    background-color: gold;
+}
+.view{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 500px;
+    background: rgb(0,0,0);
+}
+.figures{
+    background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
+    width: 120px;
+    border: 1px solid white;
+    border-radius: 0 10px 10px 0;
+    padding-left: 55px;
+}
+.square__figures{
+    width: 50px;
+    height: 50px;
+    background: white;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+.hexagon__figures{
+    width: 50px;
+    height: 25px;
+    background: white;
+    position: relative;
+}
+.hexagon__figures:before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 12px solid white;
+}
+.hexagon__figures:after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 12px solid white;
+}
+.circle__figures{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle__figures_two{
+    width: 25px;
+    height: 25px;
+    background: rgb(100,100,100);
+    border-radius: 50px;
+}
+.canvas{
+    background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
+    flex-grow: 3;
+    margin: 1em auto;
+    padding: 1em;
+    border-left: 1px solid rgb(999,999,999);
+    border-right: 1px solid rgb(999,999,999);
+    border-bottom: 1px solid rgb(100,100,100);
+    border-top: 1px solid rgb(100,100,100);
+    box-shadow: 20px 0 20px -20px #999 inset, -20px 0 20px -20px #999 inset;
+
+}
+
+.layers{
+    background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
+    width: 120px;
+    padding-left: 15px;
+    border: 1px solid white;
+    border-radius: 10px 0 0 10px;
+}
+.button__layers,.brushes__button{
+    margin-top: 15px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    border: solid 1px transparent;
+    border-radius: 4px;
+    color: #000000;
+    background-color: #ffffff;
+}
+.button__layers:active,.brushes__button:active {
+    transform: translateY(1px);
+    filter: saturate(150%);
+}
+.button__layers:hover, .brushes__button:hover{
+    color: white;
+    border-color: currentColor;
+    background-color: black;
+}
