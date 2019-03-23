@@ -73,27 +73,15 @@
 </div>
 
 <script src="main.js"></script>
+<script src="getInclude.js"></script>
+<script src="include.js"></script>
 <script>
-    function includeCss(file){
+    
+    //div.addEventListener(function (event) {
+    //  if(event.target.classList.contains('someClass'))
+    // const color = event.target.getCalculatedCSS.('backgroundColor')
 
-        let link = document.createElement("link");
-        link.setAttribute("rel", "stylesheet");
-        link.setAttribute("type", "text/css");
-        link.setAttribute("href", file);
-        document.getElementsByTagName("head")[0].appendChild(link);
-
-    }
-
-    const includeLight = document.getElementById('light');
-    const includeDark = document.getElementById('dark');
-    includeLight.addEventListener('click', function () {
-        includeCss('style.css')
-    })
-    includeDark.addEventListener('click', function () {
-        includeCss('dark.css')
-    })
-
-
+    //});
 </script>
 </body>
 </html>

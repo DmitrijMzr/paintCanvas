@@ -48,15 +48,18 @@ ul.language{
     padding-left: 0px;
     margin-left: -25px;
     padding-top: 5px;
-    opacity: 0;
+    display:none;
 }
+
+
+
 ul.language li{
     padding-top: 5px;
     padding-left: 25px;
     padding-bottom: 5px;
 }
 .dropdown li:hover .language{
-    opacity: 1;
+    display:inline;
 }
 ul.language li:hover{
     color: white;
@@ -68,11 +71,11 @@ ul.theme{
     position: absolute;
     background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
     list-style-type: none;
-    width: 112px;
+    width: 134px;
     padding-left: 0px;
     margin-left: -25px;
     padding-top: 5px;
-    opacity: 0;
+    display: none;
 }
 ul.theme li{
     padding-top: 5px;
@@ -80,7 +83,7 @@ ul.theme li{
     padding-bottom: 5px;
 }
 .dropdown li:hover .theme{
-    opacity: 1;
+    display: inline;
 }
 ul.theme li:hover{
     color: white;
