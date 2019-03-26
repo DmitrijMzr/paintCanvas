@@ -3,18 +3,17 @@
     padding: 0;
     font-size: 20px;
     font-family: Arial;
-}
-body{
-    background-color: #fff;
+    outline: none;
 }
 .control{
     display: flex;
     flex-direction: row;
-    width: 95%;
-    margin: 1em auto;
-    padding: 1em;
-    border-radius: 10px;
-    background: rgb(100,100,100) radial-gradient(circle at 50% 0, rgba(255,255,255,.65), rgba(255,255,255,.35));
+    width: 100%;
+    margin: 0;
+    margin-bottom: 3em;
+    padding:0;
+    border-radius: 0;
+    background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
     box-shadow:
             inset rgba(0,0,0,.6) 0 -3px 8px,
             inset rgba(252,255,255,.7) 0 3px 8px,
@@ -24,8 +23,8 @@ body{
     margin-top: 10px;
 }
 .dropdown > ul{
-    background: rgb(100,100,100) radial-gradient(circle at 50% 0, rgba(255,255,255,.65), rgba(255,255,255,.35));
-    color: #d8d8d8;
+    background: radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
+    color: #ccc;
 }
 
 .dropdown > ul > li{
@@ -36,26 +35,29 @@ body{
 }
 
 .dropdown > ul > li:hover{
-    background: rgb(100,100,100) radial-gradient(circle at 50% 0, rgba(255,255,255,.65), rgba(255,255,255,.35));
+    background: linear-gradient(rgb(70,70,70), rgb(120,120,120));
 }
 
 ul.language{
     position: absolute;
-    background: rgb(100,100,100) radial-gradient(circle at 50% 0, rgba(255,255,255,.65), rgba(255,255,255,.35));
+    background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
     list-style-type: none;
     width: 161px;
     padding-left: 0px;
     margin-left: -25px;
     padding-top: 5px;
-    display: none;
+    display:none;
 }
+
+
+
 ul.language li{
     padding-top: 5px;
     padding-left: 25px;
     padding-bottom: 5px;
 }
 .dropdown li:hover .language{
-    display: inline;
+    display:inline;
 }
 ul.language li:hover{
     color: white;
@@ -65,7 +67,7 @@ ul.language li:hover{
 
 ul.theme{
     position: absolute;
-    background: rgb(100,100,100) radial-gradient(circle at 50% 0, rgba(255,255,255,.65), rgba(255,255,255,.35));
+    background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
     list-style-type: none;
     width: 134px;
     padding-left: 0px;
@@ -90,35 +92,37 @@ a{
     color: #d8d8d8;
 }
 a:active,a:focus{
-    color: white;
+    color: black;
 }
 .panel{
     display: flex;
     flex-wrap: wrap;
 }
 .brushes__panel{
-    margin-left: 5px;
+    margin-left: 25px;
     margin-right: 5px;
 }
 .size__panel{
     margin-top: 15px;
+    margin-left: 25px;
 }
 label{
-    color: black;
+    color: white;
 }
 .blur__panel{
     margin-top: 15px;
-    margin-left: 10px;
+    margin-left: 25px;
 }
+
 .color__panel{
     display: flex;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 40px;
 }
 .color__panel > div{
     width: 14px;
     height: 14px;
-    border: 1px solid black;
+    border: 1px solid white;
 }
 .red{
     background: red;
@@ -153,7 +157,7 @@ label{
 .silver{
     background-color: silver;
 }
-.golden{
+.gold{
     background-color: gold;
 }
 .view{
@@ -161,26 +165,25 @@ label{
     flex-direction: row;
     width: 100%;
     height: 500px;
-    background: #ffffff;
 }
 .figures{
-    background: rgb(100,100,100) radial-gradient(circle at 50% 0, rgba(255,255,255,.65), rgba(255,255,255,.35));
+    background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
     width: 120px;
-    border: 1px solid black;
-    border-radius: 0 10px 10px 0;
+    border: 1px solid white;
+    border-radius: 0;
     padding-left: 55px;
 }
 .square__figures{
     width: 50px;
     height: 50px;
-    background: black;
+    background: white;
     margin-bottom: 50px;
     margin-top: 100px;
 }
 .hexagon__figures{
     width: 50px;
     height: 25px;
-    background: black;
+    background: white;
     position: relative;
 }
 .hexagon__figures:before {
@@ -192,7 +195,7 @@ label{
     height: 0;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
-    border-bottom: 12px solid black;
+    border-bottom: 12px solid white;
 }
 .hexagon__figures:after {
     content: "";
@@ -203,14 +206,14 @@ label{
     height: 0;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
-    border-top: 12px solid black;
+    border-top: 12px solid white;
 }
 .circle__figures{
     margin-top: 50px;
     margin-bottom: 20px;
     width: 50px;
     height: 50px;
-    background: black;
+    background: white;
     border-radius: 50px;
     display: flex;
     justify-content: center;
@@ -219,25 +222,31 @@ label{
 .circle__figures_two{
     width: 25px;
     height: 25px;
-    background: #656565;
+    background: rgb(100,100,100);
     border-radius: 50px;
 }
 .canvas{
-    background: rgb(100,100,100) radial-gradient(circle at 50% 0, rgba(255,255,255,.65), rgba(255,255,255,.35));
+    /*background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));*/
     flex-grow: 3;
     margin: 1em auto;
-    padding: 1em;
-    border: 1px solid rgb(100,100,100);
-    box-shadow: 20px 0 20px -20px #000 inset, -20px 0 20px -20px #000 inset;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-left: 1px solid rgb(999,999,999);
+    border-right: 1px solid rgb(999,999,999);
+    border-bottom: 1px solid rgb(100,100,100);
+    border-top: 1px solid rgb(100,100,100);
+    box-shadow: 20px 0 20px -20px #999 inset, -20px 0 20px -20px #999 inset;
 
 }
 
 .layers{
-    background: rgb(100,100,100) radial-gradient(circle at 50% 0, rgba(255,255,255,.65), rgba(255,255,255,.35));
+    background: rgb(10,10,10) radial-gradient(circle at 50% 0, rgba(55,55,55,.65), rgba(55,55,55,.35));
     width: 120px;
     padding-left: 15px;
-    border: 1px solid black;
-    border-radius: 10px 0 0 10px;
+    border: 1px solid white;
+    border-radius: 0;
 }
 .button__layers,.brushes__button{
     margin-top: 15px;
@@ -246,15 +255,15 @@ label{
     text-decoration: none;
     border: solid 1px transparent;
     border-radius: 4px;
-    color: #ffffff;
-    background-color: black;
+    color: #000000;
+    background-color: #ffffff;
 }
 .button__layers:active,.brushes__button:active {
     transform: translateY(1px);
     filter: saturate(150%);
 }
 .button__layers:hover, .brushes__button:hover{
-    color: black;
+    color: white;
     border-color: currentColor;
-    background-color: white;
+    background-color: black;
 }

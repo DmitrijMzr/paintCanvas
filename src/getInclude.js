@@ -8,6 +8,3 @@ function includeCss(file){
 
 }
 
-function event() {
-    
-}

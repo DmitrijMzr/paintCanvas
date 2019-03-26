@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="dark.css">
-    <title>Title</title>
+    <title>Canvas</title>
 </head>
 <body>
 
@@ -12,15 +11,15 @@
         <ul>
             <li>
                 <span>&#9881;</span>
-                Language
+                <span id="lang">Language</span>
                 <ul class="language">
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">Русский</a></li>
+                    <li><a href="#" id="en" class="choose-language">English</a></li>
+                    <li><a href="#" id="ru" class="choose-language">Русский</a></li>
                 </ul>
             </li>
             <li>
                 <span>&#9881;</span>
-                Theme
+                <span id="theme">Theme</span>
                 <ul class="theme">
                     <li><a href="#" id="dark">Dark</a></li>
                     <li><a href="#" id="light">Light</a></li>
@@ -30,17 +29,17 @@
     </div>
     <div class="panel">
         <div class="brushes__panel">
-            <button class="brushes__button">Brushes</button>
+            <button class="brushes__button"><span id="brushes">Brushes</span></button>
         </div>
         <div class="size__panel">
-            <label for="brushSize">choose brush size</label>
-            <input id="brushSize" type="range" min="0" max="100" step="1" value="50">
+            <label for="brushSize"><span id="SizeBrush">brush size</span></label>
+            <input id="brushSize" type="range" min="0" max="50" step="1" value="10">
         </div>
         <div class="blur__panel">
-            <label for="blurBrush">choose brush blur</label>
+            <label for="blurBrush"><span id="brushBlur">brush blur</span></label>
             <input id="blurBrush" type="range" min="0" max="100" step="1" value="50">
         </div>
-        <div class="color__panel">
+        <div id="colors" class="color__panel">
             <div class="red"></div>
             <div class="orange"></div>
             <div class="yellow"></div>
@@ -52,7 +51,7 @@
             <div class="grey"></div>
             <div class="brown"></div>
             <div class="silver"></div>
-            <div class="golden"></div>
+            <div class="gold"></div>
         </div>
     </div>
 </div>
@@ -64,24 +63,20 @@
         <div class="circle__figures_two"></div>
     </div>
 </div>
-<div class="canvas">
-    <canvas class="canvas__layers" id="a"></canvas>
+<div class="canvas" id="idWrapperCanvas">
+
 </div>
-<div class="layers">
-    <button class="button__layers">Add layers</button>
+<div class="layers" id="idWrapperLayers">
+    <button class="button__layers" id="idAddLayer">Add layers</button>
 </div>
 </div>
 
-<script src="main.js"></script>
-<script src="getInclude.js"></script>
-<script src="include.js"></script>
-<script>
-    
-    //div.addEventListener(function (event) {
-    //  if(event.target.classList.contains('someClass'))
-    // const color = event.target.getCalculatedCSS.('backgroundColor')
-
-    //});
-</script>
+<script src="src/main.js"></script>
+<script src="src/layers.js"></script>
+<script src="src/getInclude.js"></script>
+<script src="src/include.js"></script>
+<script src="lang/chooseLang.js"></script>
+<script src="lang/en.js"></script>
+<script src="lang/ru.js"></script>
 </body>
 </html>

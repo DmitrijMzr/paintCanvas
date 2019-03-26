@@ -1,20 +1,28 @@
-function CanvasPainter(id_canvas) {
+function CanvasPainter(idCanvas) {
     this.canvas = null;
     this.context = null;
     if (arguments.length > 0) {
-        this.setCanvas(id_canvas);
+        this.initCanvas(idCanvas);
     }
 
     this.isNowDrawing = false;
 
     this.delta = { x: 0, y: 0}; // поправки к абсолютным координатам
+    this.sizeElem = false;
+    this.colorsElem = false;
+    this.color = 'gray';
 }
 
-CanvasPainter.prototype.setCanvas = function(id_canvas) {
-    this.canvas = document.getElementById(id_canvas);
+CanvasPainter.prototype.initCanvas = function(idCanvas) {
+    this.canvas = document.getElementById(idCanvas);
     this.context = this.canvas.getContext("2d");
     this.canvas.width = this.canvas.parentNode.clientWidth;
     this.canvas.height = this.canvas.parentNode.clientHeight;
+    this.sizeElem = document.getElementById('brushSize');
+    this.colorsElem = document.getElementById('colors');
+    this.colorsElem.addEventListener('click', (event) => {
+        this.color = event.target.classList[0];
+    });
 
     this.canvas.addEventListener("mousedown",  this.startDraw.bind(this));
     this.canvas.addEventListener("mousemove",  this.draw.bind(this));
@@ -34,7 +42,9 @@ CanvasPainter.prototype.refreshCanvasPosition = function() {
 
 CanvasPainter.prototype.startDraw = function(event) {
     this.refreshCanvasPosition(); //положение холста может измениться
-
+    this.context.strokeStyle = this.color;
+    this.context.lineWidth = this.sizeElem.value;
+    this.context.beginPath();
     this.context.moveTo(event.clientX - this.delta.x, event.clientY - this.delta.y);
     this.isNowDrawing = true;
 };
@@ -45,7 +55,6 @@ CanvasPainter.prototype.draw = function(event) {
     }
 
     this.refreshCanvasPosition(); //положение холста может измениться
-
     this.context.lineTo(event.clientX - this.delta.x, event.clientY - this.delta.y);
     this.context.stroke();
 };
@@ -60,5 +69,5 @@ CanvasPainter.prototype.continueDraw = function(event) {
         this.context.moveTo(event.clientX - this.delta.x, event.clientY - this.delta.y);
     }
 };
-const a = new CanvasPainter();
-a.setCanvas("a");
+// const a = new CanvasPainter();
+// a.initCanvas("a");
